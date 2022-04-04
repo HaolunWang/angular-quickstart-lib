@@ -414,3 +414,19 @@ to the `globals` and `external` array in the `rollupBaseConfig` variable in `./b
 
 This ensures your library doesn't package extra libraries inside of it and instead uses the ones
 available in the consuming app.
+
+## Notes for set up (might be useful)
+
+When you run 'npm start', you might encounter the issue like 'node_modules/@types/node/index.d.ts(20,1): error TS1084: Invalid 'reference' directive syntax'.
+
+The solution is to upgrade the typescript version for this project:
+
+Make changes in the package.json file like below:
+
+"devDependencies": {
+     "typescript": "^4.6.3" // latest version
+ }
+
+Now "npm install typescript" , it will upgrade to latest version. Then run "npm start" and it will run successfully.
+
+Reference: [stack overflow](https://stackoverflow.com/questions/63720450/node-modules-types-node-index-d-ts20-1-error-ts1084-invalid-reference-dir)
